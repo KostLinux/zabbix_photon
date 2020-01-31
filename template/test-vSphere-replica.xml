@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2019-11-15T11:28:02Z</date>
+    <groups>
+        <group>
+            <name>test-vraa.ml.ee</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>test-vraa.ml.ee</template>
+            <name>test-vraa.ml.ee</name>
+            <groups>
+                <group>
+                    <name>test-vraa.ml.ee</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>test-vra.ml.ee</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Check zabbix-agent</name>
+                    <key>agent.ping</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>zabbix-agent down</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>check port 443</name>
+                    <key>net.tcp.port[443]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Port 443 unavailable</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>check port 5480</name>
+                    <key>net.tcp.port[5480]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Port 5480 unavailable</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>HBRSRV service</name>
+                    <key>proc.num[hbrsrv-bin]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>HBRSRV service is down</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>HMS service</name>
+                    <key>proc.num[java,,,hms]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>HMS service is down</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>tomcat service</name>
+                    <key>proc.num[java,,,tomcat]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Tomcat service is down</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>vcloud agent</name>
+                    <key>proc.num[java,,,vcta]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>vcloud-agent unavailable</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>vami-lighttp service</name>
+                    <key>proc.num[vami-lighttpd]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>VAMI-lighttp service is down</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>vami-sfcbd service</name>
+                    <key>proc.num[vami-sfcbd]</key>
+                    <applications>
+                        <application>
+                            <name>test-vra.ml.ee</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>VAMI-SFCBD service is down</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
