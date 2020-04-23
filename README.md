@@ -1,7 +1,8 @@
+#Zabbix Agent on PhotonOS 3.0
 This repo contains zabbix-agent and templates for PHOTON OS
-vCenter monitoring is for zabbix-server v3.4
-vCenter Replica monitoring is for zabbix-server v4.4
-You can install it automatically with .sh (bash) script or manually
+- vCenter monitoring is for zabbix-server v3.4
+- vCenter Replica monitoring is for zabbix-server v4.4
+You can install it automatically with shell (bash) script or manually
 
 
 Check, that you have git package installed, otherwise run this command:
