@@ -48,7 +48,8 @@ root@vcsa#: vi /etc/zabbix/zabbix_agentd.conf
 4. Backup / Snapshot it
 5. Reboot
 
-Debugging:
+## Debugging
+
 If it will give PidFile error, then do this.
 ```
 mkdir -p /var/run/zabbix ; chmod 775 /var/run/zabbix ; mkdir -p /var/log/zabbix
@@ -60,3 +61,9 @@ Enable and start zabbix-agent
 systemctl start zabbix-agent
 systemctl enable zabbix-agent
 ```
+## Author
+* **Christofher** - *Initial work* - [KostLinux](https://github.com/KostLinux)
+
+## License
+This project is licensed under the MIT License- see the [LICENSE](LICENSE.md) file for details.
+
