@@ -28,7 +28,7 @@ root@vcsa#: vi /etc/zabbix/zabbix_agentd.conf
 ```
 3. VMWare has bug, that every time you reboot PhotonOS, it deletes /var/run/zabbix and /var/log/zabbix directories
    So it's better to create script and add cronjob, that does this work after every reboot
-   ```
+ ```
    3.1 root@vcsa#: vi zabbix_on_boot.sh
 				
 				Add these lines: #!/bin/bash
@@ -49,13 +49,13 @@ root@vcsa#: vi /etc/zabbix/zabbix_agentd.conf
 5. Reboot
 
 Debugging:
-#If it will give PidFile error, then do this.
+If it will give PidFile error, then do this.
 ```
 mkdir -p /var/run/zabbix ; chmod 775 /var/run/zabbix ; mkdir -p /var/log/zabbix
 ```
-#We need to give 775 rights to /var/run/zabbix because otherwise it will give permission denied error
+We need to give 775 rights to /var/run/zabbix because otherwise it will give permission denied error
 
-#Enable and start zabbix-agent
+Enable and start zabbix-agent
 ```
 systemctl start zabbix-agent
 systemctl enable zabbix-agent
