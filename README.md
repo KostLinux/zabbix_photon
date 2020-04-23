@@ -40,6 +40,8 @@ root@vcsa#: vi /etc/zabbix/zabbix_agentd.conf
 								systemctl enable zabbix-agent
 								systemctl restart zabbix-agent
 				:wq!
+```
+```
 				chmod +x zabbix_on_boot.sh ; bash zabbix_on_boot.sh
 				
 				crontab -e
