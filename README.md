@@ -16,22 +16,24 @@ root@vcsa#: cd zabbix_photon; bash install.sh
 
 1. Install rpm package
 ```
-root@vcsa#: rpm -Uvh /content/rpm/zabbix-agent-3.0.28-1.6.ph1.x86_64.rpm --nodeps
+rpm -Uvh /content/rpm/zabbix-agent-3.0.28-1.6.ph1.x86_64.rpm --nodeps
 ```
 2. Edit zabbix_agentd.conf file
 ```
-root@vcsa#: vi /etc/zabbix/zabbix_agentd.conf
-			
-			Server:Your_Zabbix_Server_IP
-			:wq!
-			
+vi /etc/zabbix/zabbix_agentd.conf			
+
+Server:Your_Zabbix_Server_IP
+:wq!			
 ```
 3. VMWare has bug, that every time you reboot PhotonOS, it deletes /var/run/zabbix and /var/log/zabbix directories
    So it's better to create script and add cronjob, that does this work after every reboot
- ```
-3.1 root@vcsa#: vi zabbix_on_boot.sh
-				
-Add these lines: #!/bin/bash
+   
+   
+3.1 Create script: 
+```
+vi zabbix_on_boot.sh
+
+#!/bin/bash
 
 # Creates directories with rights
 mkdir -p /var/run/zabbix/; chmod 777 /var/run/zabbix
@@ -41,11 +43,16 @@ systemctl enable zabbix-agent
 systemctl restart zabbix-agent
 :wq!
 ```
+3.2 Give rights to script and start it
 ```
-				chmod +x zabbix_on_boot.sh ; bash zabbix_on_boot.sh
-				
-				crontab -e
-				Add the end next line: @reboot /path/to/zabbix_on_boot.sh
+chmod +x zabbix_on_boot.sh ; bash zabbix_on_boot.sh
+```
+
+3.2 Configure cron:
+```
+crontab -e
+Add the end next line: 
+@reboot /path/to/zabbix_on_boot.sh
 ```
 4. Backup / Snapshot it
 5. Reboot
