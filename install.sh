@@ -1,9 +1,9 @@
 #!/bin/bash
-#If user is not root, stop script
-#if [ "$EUID" -ne 0]
- #   then echo -e '\e[1;33mPlease run as root! \e[0m'
-  #  exit
-#else
+If user is not root, stop script
+if [ "$EUID" -ne 0]
+    then echo -e '\e[1;33mPlease run as root! \e[0m'
+    exit
+else
 
 # Start script
 # Set variable to user current working dir
@@ -117,4 +117,4 @@ read -p $'\e[1;33mPlease select your network type (public/private): \e[0m' netwo
     fi
 
    exit
-#fi
+fi
