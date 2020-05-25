@@ -48,7 +48,7 @@ systemctl restart zabbix-agent
 chmod +x zabbix_on_boot.sh ; bash zabbix_on_boot.sh
 ```
 
-3.2 Configure cron:
+3.3 Configure cron:
 ```
 crontab -e
 Add the end next line: 
