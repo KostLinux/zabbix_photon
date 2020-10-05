@@ -1,4 +1,4 @@
-#Zabbix Agent on PhotonOS 3.0
+# Zabbix Agent on PhotonOS 3.0
 This repo contains zabbix-agent and templates for PHOTON OS
 - vCenter monitoring is for zabbix-server v3.4
 - vCenter Replica monitoring is for zabbix-server v4.4
